@@ -3,5 +3,4 @@ kind: Preview
 metadata:
   name: example-preview
 spec:
-  # Add fields here
-  size: 3
+  image: "okteto/vote:latest"
