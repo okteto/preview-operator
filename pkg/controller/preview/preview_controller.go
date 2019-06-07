@@ -143,9 +143,8 @@ func newPodForCR(cr *devv1alpha1.Preview) *corev1.Pod {
 		Spec: corev1.PodSpec{
 			Containers: []corev1.Container{
 				{
-					Name:    "busybox",
-					Image:   "busybox",
-					Command: []string{"sleep", "3600"},
+					Name:  "preview",
+					Image: cr.Spec.Image,
 				},
 			},
 		},

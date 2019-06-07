@@ -10,9 +10,7 @@ import (
 // PreviewSpec defines the desired state of Preview
 // +k8s:openapi-gen=true
 type PreviewSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
-	// Add custom validation using kubebuilder tags: https://book.kubebuilder.io/beyond_basics/generating_crd.html
+	Image string `json:"image,omitempty"`
 }
 
 // PreviewStatus defines the observed state of Preview
@@ -34,8 +32,6 @@ type Preview struct {
 
 	Spec   PreviewSpec   `json:"spec,omitempty"`
 	Status PreviewStatus `json:"status,omitempty"`
-
-	Image string `json:"image"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
